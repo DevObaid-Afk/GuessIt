@@ -45,7 +45,7 @@ function DashboardPage() {
   async function handleStart() {
     setStarting(true);
     try {
-      const data = await api.post("/game/start", {
+      const data = await api.post("/api/game/start", {
         wordLength: selectedLength,
         attemptsAllowed: selectedAttempts
       });
