@@ -42,7 +42,7 @@ function GameplayPage() {
     setSubmitting(true);
 
     try {
-      const data = await api.post("/game/guess", {
+      const data = await api.post("/api/game/guess", {
         sessionId: session._id,
         guess
       });
@@ -71,7 +71,7 @@ function GameplayPage() {
   async function requestHint() {
     setHintLoading(true);
     try {
-      const data = await api.post("/game/hint", { sessionId: session._id });
+      const data = await api.post("/api/game/hint", { sessionId: session._id });
       setSession(data.session);
       toast.push(`Hint unlocked: ${data.latestHint.label}`, "success");
     } catch (error) {
